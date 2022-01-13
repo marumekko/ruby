@@ -564,3 +564,6 @@ p Date.today #=>#<Date:20170407((2457851j,0s,0n),+0s,2299161j)>
 # 文字列をinspectすると、ダブルダブルクオート付きの文字列が返る
 p 'abc'.inspect #=>"\"abc\""
 # p と print では配列の表示が異なる
+
+# 出典: 伊藤 淳一. プロを目指す人のためのRuby入門 言語仕様からテスト駆動開発・デバッグ技法まで (Software Design plus)
+# (Japanese Edition) (Kindle の位置No.2088). Kindle 版.
