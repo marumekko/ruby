@@ -298,7 +298,7 @@ p message # =>"何か異常があります"
 # Rewrite these with the positive case first. (convention:Style/UnlessElse)]
 status = 'error'
 message =
-  unless status=='ok'
+  unless status == 'ok'
     '何か異常があります'
   else
     '正常です'
@@ -400,15 +400,21 @@ def greeting(country)
 end
 
 # 引数が少ない
-# greeting
-# =>ArgumentError:wrongnumberofarguments(given0,expected1)
+begin
+  p greeting()
+rescue => e
+  p e # =>ArgumentError:wrongnumberofarguments(given0,expected1)
+end
 
 # 引数がちょうど
 p greeting('us') # =>"hello"
 
 # 引数が多い
-# greeting('us', 'japan')
-# =>ArgumentError:wrongnumberofarguments(given2,expected1)
+begin
+  p greeting('us', 'japan')
+rescue => e
+  p e # =>ArgumentError:wrongnumberofarguments(given2,expected1)
+end
 
 # 引数にデフォルト値を付ける場合
 # def メソッド(引数1 = デフォルト値1, 引数2 = デフォルト値2)
