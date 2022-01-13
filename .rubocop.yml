@@ -1,0 +1,7 @@
+
+AllCops:
+  TargetRubyVersion: 2.7.0
+
+# Use only ascii symbols in comments.
+Style/AsciiComments:
+  Enabled: false
