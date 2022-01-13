@@ -1,9 +1,7 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
 # 2.2.1 すべてがオブジェクト
-
 # Rubyはオブジェクト指向言語である。数値や nil, true/false に対してもメソッドを呼び出せる
-
 # 文字列
 p '1'.to_s #=>"1"
 
@@ -21,7 +19,6 @@ p false.to_s #=>"false"
 p /\d+/.to_s #=>"(?-mix:\d+)"
 
 # 2.2.2 メソッド呼び出し
-
 # 形式 : オブジェクト.メソッド(引数1, 引数2, 引数3) ※カッコは省略可能
 
 p 10.to_s(16)
@@ -40,7 +37,6 @@ p 'こんにちは\nさようなら'
 # =>こんにちは\nさようなら
 
 # 2.4 数値
-
 # 数値には_を含めることができます。_は無視されるので、大きな数の区切り文字として使うと便利
 p 1_000_000_000 #=>1000000000
 
@@ -455,9 +451,8 @@ p a.upcase #=>"RUBY"
 p a #=>'ruby'
 
 # upcase! だと変数 a の値も大文字に変わる
-# p a.upcase! #=>"RUBY"
-# p a #=>"RUBY"
-# -> [in `upcase!': can't modify frozen String: "ruby" (FrozenError)]
+p a.upcase! #=>"RUBY"
+p a #=>"RUBY"
 # なお、このように呼び出したオブジェクトの状態を変更してしまうメソッドのことを「破壊的メソッド」と呼ぶ
 
 # 2.12 その他の基礎知識
