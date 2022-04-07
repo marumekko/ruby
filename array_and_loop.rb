@@ -106,3 +106,42 @@ numbers.each { |n| sum += n }
 p sum #=>10
 
 # 4.4 ブロックを使う配列のメソッド
+# 4.4.1 map/collect
+# エイリアスメソッドはcollect
+# mapメソッドは各要素に対してブロックを評価した結果を新しい配列にして返す
+
+# 例) に配列の各要素を10倍した新しい配列を作る
+# each メソッドの場合
+numbers = [1, 2, 3, 4, 5]
+new_numbers = []
+numbers.each { |n| new_numbers << n * 10 }
+p new_numbers #=>[10,20,30,40,50]
+
+# map メソッドの場合
+numbers = [1, 2, 3, 4, 5]
+# ブロックの戻り値が新しい配列の各要素になる
+new_numbers = numbers.map { |n| n * 10 }
+p new_numbers #=>[10,20,30,40,50]
+
+# 4.4.2 select/find_all/reject
+# selectメソッド（エイリアスメソッドはfind_all）は各要素に対してブロックを評価し、その戻り値が真の要素を集めた配列を返すメソッド
+
+# 例) 偶数の数値だけを集めた配列を新たに作る
+numbers = [1, 2, 3, 4, 5, 6]
+# ブロックの戻り値が真になった要素だけが集められる
+even_numbers = numbers.select { |n| n.even? }
+p even_numbers #=>[2,4,6]
+
+# rejectメソッドはselectメソッドの反対
+# ブロックの戻り値が真になった要素を除外した配列を返す = ブロックの戻り値が偽である要素を集めるメソッド
+numbers = [1, 2, 3, 4, 5, 6]
+# 3の倍数を除外する（3の倍数以外を集める
+non_multiples_of_three = numbers.reject { |n| (n % 3).zero? }
+p non_multiples_of_three #=>[1,2,4,5]
+
+# 4.4.3 find/detect
+# findメソッド（エイリアスメソッドはdetect）はブロックの戻り値が真になった最初の要素を返す
+numbers = [1, 2, 3, 4, 5, 6]
+# ブロックの戻り値が最初に真になった要素を返す
+even_number = numbers.find { |n| n.even? }
+p even_number #=>2
